@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:waste_management_app/screens/auth/login_screen.dart';
 import 'package:waste_management_app/screens/auth/signup_screen.dart';
+import 'package:waste_management_app/screens/onboarding/onboarding_screen';
+import 'package:waste_management_app/screens/onboarding/onboarding_screen1.dart';
+import 'package:waste_management_app/screens/onboarding/onboarding_screen2.dart';
+import 'package:waste_management_app/screens/onboarding/onboarding_screen3..dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +18,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: LoginScreen(),
+    home: const OnboardingPage1(),
     routes: {
      '/login' : (context) => LoginScreen(),
-     '/signup': (context) => SignupScreen()
+     '/signup': (context) => SignupScreen(),
+     '/onboarding_screen1': (context) => const OnboardingPage1(),
+     '/onboarding_screen2': (context) => const OnboardingPage2(),
+     '/onboarding_screen3': (context) => const OnboardingPage3(),
+    //  '/onboarding': (context) =>  const OnboardingScreen(),
     },
     
     );
