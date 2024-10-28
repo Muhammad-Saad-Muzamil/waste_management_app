@@ -1,0 +1,1 @@
+ D:\\project\ clean\ strike\\waste_management_app\\.dart_tool\\flutter_build\\85395ce48c6539120397bc5465bc984e\\native_assets.yaml: 

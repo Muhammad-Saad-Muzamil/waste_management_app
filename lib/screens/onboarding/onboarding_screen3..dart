@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:waste_management_app/screens/auth/signup_screen.dart';
 
 class OnboardingPage3 extends StatelessWidget {
   const OnboardingPage3({super.key});
+
+  Future<void> completeOnboarding(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool("hasSeenOnboarding", true); // Set onboarding completion
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignupScreen())); // Navigate to SignupScreen
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +37,7 @@ class OnboardingPage3 extends StatelessWidget {
             const SizedBox(height: 50),
             ElevatedButton(
               onPressed: () {
-                // Navigate to the app's home page or sign-in screen
-                // Example:
-                 Navigator.pushReplacementNamed(context, '/signup');
+                completeOnboarding(context); // Set onboarding status and navigate to SignupScreen
               },
               child: const Text("Get Started"),
             ),

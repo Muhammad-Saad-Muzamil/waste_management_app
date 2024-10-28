@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:waste_management_app/screens/onboarding/onboarding_screen2.dart';
 
 class OnboardingPage1 extends StatelessWidget {
   const OnboardingPage1({super.key});
+
+  Future<void> completeOnboarding(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool("hasSeenOnboarding", true); // Set onboarding completion
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const OnboardingPage2()), // Navigate to Page 2
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +40,7 @@ class OnboardingPage1 extends StatelessWidget {
             const SizedBox(height: 50),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/onboarding_screen2');
+                completeOnboarding(context); // Navigate to OnboardingPage2
               },
               child: const Text("Next"),
             ),

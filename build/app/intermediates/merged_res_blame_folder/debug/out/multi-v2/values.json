@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.waste_management_app-mergeDebugResources-25:/values/values.xml",
+            "outputFile": "com.example.waste_management_app-mergeDebugResources-27:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\saad\\.gradle\\caches\\transforms-3\\4b07bb875192e8c29c9b76677237c5c8\\transformed\\jetified-activity-1.8.1\\res\\values\\values.xml",

@@ -29,7 +29,7 @@ class OnboardingPage2 extends StatelessWidget {
             const SizedBox(height: 50),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/onboarding_screen3');
+                Navigator.pushReplacementNamed(context, '/onboarding_screen3'); // Make sure the route matches exactly
               },
               child: const Text("Next"),
             ),
